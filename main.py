@@ -19,6 +19,7 @@ def is_valid_image(file):
 def index():
     
     if request.method == 'POST':
+        print("YES")
         image = request.files['fileup']
         newimage = Image.open(imagee)
         return jsonify({"Try": str(image.filename)})
