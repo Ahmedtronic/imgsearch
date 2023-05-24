@@ -21,7 +21,7 @@ def index():
     try:
         image.verify()
         print(str(image.filename))
-        return str(image.filename)
+        return return jsonify({"Choo Choo": str(image.filename)})
     except Exception:
         return "None"
 
