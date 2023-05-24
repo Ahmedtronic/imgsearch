@@ -29,7 +29,8 @@ def index():
         result = []
         for file in os.listdir("data"):
             result.append(file)
-            return jsonify({"Hey":  str(result)})
+        
+        return jsonify({"Hey":  str(result)})
         
 if __name__ == '__main__':
     app.run(debug=True, port=os.getenv("PORT", default=5000))
