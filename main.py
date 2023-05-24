@@ -28,7 +28,7 @@ def index():
         image = Image.open("data/Screenshot 2023-04-13 at 7.31.33 PM.png")
         counter = 0
         for file in os.listdir("data"):
-            print("Hi)
+            print("Hi")
             counter+=1
         try:
             image.verify()
