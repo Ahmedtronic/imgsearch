@@ -17,7 +17,7 @@ def is_valid_image(file):
 
 @app.route('/', methods=['POST'])
 def index():
-    image = Image.open("data/300605749_1496471350812876_7436557921197375791_n.jpg")
+    image = Image.open("data/Screenshot 2023-04-13 at 7.31.33 PM.png")
     try:
         image.verify()
         print(str(image.filename))
