@@ -1,4 +1,5 @@
 from flask import Flask, jsonify
+from flask import request
 import os
 from PIL import Image
 
