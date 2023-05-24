@@ -15,7 +15,7 @@ def is_valid_image(file):
         return False
 
 
-@app.route('/')
+@app.route('/', methods=['POST', "GET"])
 def index():
     image = Image.open("data/Screenshot 2023-04-13 at 7.31.33 PM.png")
     try:
