@@ -30,13 +30,8 @@ def index():
         for file in os.listdir("data"):
             print("Hi")
             counter+=1
-        try:
-            image.verify()
-            print(str(image.filename))
-            return jsonify({"Choo Choo": str(image.filename) + str(counter)})
-        except Exception:
-            return "None"
-
+            return jsonify({"Hey":  str(counter)})
+        
 if __name__ == '__main__':
     app.run(debug=True, port=os.getenv("PORT", default=5000))
     
