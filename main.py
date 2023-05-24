@@ -26,10 +26,14 @@ def index():
         return jsonify({"Try": str(image.filename)})
     else:
         image = Image.open("data/Screenshot 2023-04-13 at 7.31.33 PM.png")
+        counter = 0
+        for file in os.listdir("data"):
+            print("Hi)
+            counter+=1
         try:
             image.verify()
             print(str(image.filename))
-            return jsonify({"Choo Choo": str(image.filename)})
+            return jsonify({"Choo Choo": str(image.filename) + str(counter)})
         except Exception:
             return "None"
 
