@@ -17,13 +17,19 @@ def is_valid_image(file):
 
 @app.route('/', methods=['POST', "GET"])
 def index():
-    image = Image.open("data/Screenshot 2023-04-13 at 7.31.33 PM.png")
-    try:
-        image.verify()
-        print(str(image.filename))
-        return jsonify({"Choo Choo": str(image.filename)})
-    except Exception:
-        return "None"
+    
+    if request.method == 'POST':
+        image = request.files['fileup']
+        newimage = Image.open(imagee)
+        return jsonify({"Try": str(image.filename)})
+    else:
+        image = Image.open("data/Screenshot 2023-04-13 at 7.31.33 PM.png")
+        try:
+            image.verify()
+            print(str(image.filename))
+            return jsonify({"Choo Choo": str(image.filename)})
+        except Exception:
+            return "None"
 
 if __name__ == '__main__':
     app.run(debug=True, port=os.getenv("PORT", default=5000))
