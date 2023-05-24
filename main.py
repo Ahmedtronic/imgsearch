@@ -22,7 +22,7 @@ def index():
     if request.method == 'POST':
         print("YES")
         image = request.files['fileup']
-        newimage = Image.open(imagee)
+        newimage = Image.open(image)
         return jsonify({"Try": str(image.filename)})
     else:
         image = Image.open("data/Screenshot 2023-04-13 at 7.31.33 PM.png")
