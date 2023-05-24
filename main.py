@@ -26,11 +26,10 @@ def index():
         return jsonify({"Try": str(image.filename)})
     else:
         image = Image.open("data/Screenshot 2023-04-13 at 7.31.33 PM.png")
-        counter = 0
+        result = []
         for file in os.listdir("data"):
-            print("Hi")
-            counter+=1
-            return jsonify({"Hey":  str(counter)})
+            result.append(file)
+            return jsonify({"Hey":  str(result)})
         
 if __name__ == '__main__':
     app.run(debug=True, port=os.getenv("PORT", default=5000))
